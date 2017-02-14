@@ -1,3 +1,5 @@
+import { Http } from '@angular/http';
+import { HttpService } from './services/http.service';
 import { NgModule, } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
@@ -89,6 +91,7 @@ import { schema } from './db';
     NotFoundPageComponent
   ],
   providers: [
+    { provide: Http, useClass: HttpService },
     BookExistsGuard,
     GoogleBooksService
   ],
